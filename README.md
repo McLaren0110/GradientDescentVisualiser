@@ -8,13 +8,13 @@ The user can select a point on the 2D contour plot of the function in the GUI, w
 
 Create an environment with the environment.yml file:
 
-'''python
+```python
 conda env create -f environment.yml
-'''
+```
 
 Activate the environment, which I have named gd, and run the gradient_descent_visualiser.py 
 
-'''python
+```python
 conda activate gd
 gradient_descent_visualiser.py
-'''
+```
