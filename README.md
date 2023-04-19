@@ -18,3 +18,4 @@ Activate the environment, which I have named gd, and run the gradient_descent_vi
 conda activate gd
 gradient_descent_visualiser.py
 ```
+
