@@ -16,6 +16,6 @@ Activate the environment, which I have named gd, and run the gradient_descent_vi
 
 ```python
 conda activate gd
-gradient_descent_visualiser.py
+python gradient_descent_visualiser.py
 ```
 
