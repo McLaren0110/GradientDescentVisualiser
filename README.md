@@ -1,23 +1,60 @@
-# Gradient Descent Visualiser
 
-![Example Image](image.png)
+# Gradient Descent Visualizer App
 
-Small project to allow the user to be able to visualise how different gradient descent optimisers perform on a selection of objective functions (Rosenbrock, Ackley and Himmelbrau). Currently allows the user to visualise the Adam, Nesterov Accelerated Gradient and Adagrad optimisers.
+This app visualizes various gradient descent optimizers to demonstrate their behavior and efficiency in minimizing functions. I hope it serves as an educational tool for understanding the dynamics of different optimization algorithms.
 
-The user can select a point on the 2D contour plot of the function in the GUI, which serves as the starting point for the optimisers. Parameters for these optimisers can be changed by typing appropriate values into the input boxes on the left. Clicking the "Plot Descent paths" button starts an animation on the 2D and 3D contour plots that shows the paths of the descent. 
+## Optimizers Overview
 
-## Installation
+### Adam
+- **Description:** Combines ideas from RMSprop and Momentum, adjusting learning rates based on a moving average of recent gradients. It's efficient for large datasets and complex problems.
+- **Strengths:** Robust and fast convergence.
+- **Weaknesses:** Requires tuning of hyperparameters.
+- **Equation:** \( 	heta_{	ext{next}} = 	heta - rac{lpha}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t \)
+- **Definitions:**
+  - \( 	heta \): Parameters to optimize.
+  - \( lpha \): Learning rate.
+  - \( \hat{m}_t \): Bias-corrected exponentially weighted average of past gradients.
+  - \( \hat{v}_t \): Bias-corrected exponentially weighted average of the squares of past gradients.
+  - \( \epsilon \): Small epsilon value to prevent division by zero.
 
-Create an environment with the environment.yml file:
+### Adagrad
+- **Description:** Adapts the learning rate for each parameter, useful for dealing with sparse data.
+- **Strengths:** Eliminates the need to manually tune the learning rate.
+- **Weaknesses:** The continuously decreasing learning rate can lead to premature convergence.
+- **Equation:** \( 	heta_{	ext{next}} = 	heta - rac{lpha}{\sqrt{G_t + \epsilon}} \odot 
+abla f(	heta) \)
+- **Definitions:**
+  - \( G_t \): Sum of the squares of the past gradients.
 
-```python
-conda env create -f environment.yml
-```
+### Nesterov Accelerated Gradient (NAG)
+- **Description:** Improves upon Momentum by considering the future gradient. Faster convergence by correcting the direction more smartly.
+- **Strengths:** Faster convergence than Momentum.
+- **Weaknesses:** More complex to implement and tune.
+- **Equation:** \( v_{t} = \gamma v_{t-1} + lpha 
+abla f(	heta - \gamma v_{t-1}) \), \( 	heta_{	ext{next}} = 	heta - v_{t} \)
+- **Definitions:**
+  - \( v_{t} \): Current velocity.
+  - \( \gamma \): Momentum factor.
 
-Activate the environment, which I have named gd, and run the gradient_descent_visualiser.py 
+## Set-Up
 
-```python
-conda activate gd
-python gradient_descent_visualiser.py
-```
+To set up and run the Gradient Descent Visualizer App, follow these steps:
 
+1. **Clone the Repository:** Clone the app repository from GitHub to your local machine.
+   ```
+   git clone <repository-url>
+   ```
+2. **Create a Conda Environment:** Navigate to the cloned repository directory and create a Conda environment using the `environment.yml` file.
+   ```
+   conda env create -f environment.yml
+   ```
+3. **Activate the Conda Environment:** Once the environment is created, activate it.
+   ```
+   conda activate <env-name>
+   ```
+4. **Run the App:** Start the app with Streamlit.
+   ```
+   streamlit run app.py
+   ```
+
+Ensure you replace `<repository-url>` and `<env-name>` with the actual URL of the GitHub repository and the name of the created Conda environment, respectively.
