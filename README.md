@@ -14,11 +14,11 @@ This app visualizes various gradient descent optimizers to demonstrate their beh
 - **Equation:** 
 $$\theta_{\text{next}} = \theta - \frac{\alpha}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
 - **Definitions:**
-  - `theta`: Parameters to optimize.
-  - `alpha`: Learning rate.
-  - `hat{m}_t`: Bias-corrected exponentially weighted average of past gradients.
-  - `hat{v}_t`: Bias-corrected exponentially weighted average of the squares of past gradients.
-  - `epsilon`: Small epsilon value to prevent division by zero.
+  - $\theta$ : Parameters to optimize.
+  - $\alpha$` : Learning rate.
+  - $\hat{m}_t$ : Bias-corrected exponentially weighted average of past gradients.
+  - $\hat{v}_t$ : Bias-corrected exponentially weighted average of the squares of past gradients.
+  - $\epsilon$ : Small epsilon value to prevent division by zero.
 
 ### Adagrad
 - **Description:** Adapts the learning rate for each parameter, useful for dealing with sparse data.
@@ -27,7 +27,7 @@ $$\theta_{\text{next}} = \theta - \frac{\alpha}{\sqrt{\hat{v}_t} + \epsilon} \ha
 - **Equation:** 
 $$\theta_{\text{next}} = \theta - \frac{\alpha}{\sqrt{G_t + \epsilon}} \odot \nabla f(\theta)$$
 - **Definitions:**
-  - `G_t`: Sum of the squares of the past gradients.
+  - $G_t$ : Sum of the squares of the past gradients.
 
 ### Nesterov Accelerated Gradient (NAG)
 - **Description:** Improves upon Momentum by considering the future gradient. Faster convergence by correcting the direction more smartly.
@@ -36,8 +36,8 @@ $$\theta_{\text{next}} = \theta - \frac{\alpha}{\sqrt{G_t + \epsilon}} \odot \na
 - **Equation:** 
 $$v_{t} = \gamma v_{t-1} + \alpha \nabla f(\theta - \gamma v_{t-1}), \theta_{\text{next}} = \theta - v_{t}$$
 - **Definitions:**
-  - `v_t`: Current velocity.
-  - `gamma`: Momentum factor.
+  - $v_t$ : Current velocity.
+  - $\gamma$ : Momentum factor.
 
 ## Set-Up
 
@@ -55,11 +55,7 @@ To set up and run the Gradient Descent Visualizer App, follow these steps:
    ```
    conda activate <env-name>
    ```
-4. **Run the App:** Start the app with Streamlit.
-   ```
-   streamlit run app.py
-   ```
 
-Ensure you replace `<repository-url>` and `<env-name>` with the actual URL of the GitHub repository and the name of the created Conda environment, respectively.
+Ensure you replace `<repository-url>` and `<env-name>` with the actual URL of this GitHub repository and the name of the created Conda environment, respectively.
 
 
